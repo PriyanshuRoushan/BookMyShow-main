@@ -1,0 +1,515 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 90px;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 10;
+}
+
+/* Left side: logo + search */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+  width: 450px;  /* adjust as needed */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px 10px 8px 35px; /* left padding for icon space */
+  border-radius: 4px;
+  border: 1px solid #e7e7e7;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;           /* distance from left edge of input */
+  top: 50%;             /* vertical center */
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  color: #888;
+  pointer-events: none; /* allows typing through the icon */
+}
+
+
+
+/* Right side: city, signin, menu */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-city {
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  user-select: none;
+}
+
+.navbar-city:hover {
+  color: #f84464;
+}
+.city-down-arrow {
+  font-size: 18px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.navbar-signin {
+  background-color: #f84464;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 1px 1px 1px 1px rgba(3, 0, 0, 0.3);
+}
+
+.navbar-signin:hover {
+  background-color: #d93658;
+}
+
+.navbar-menubar {
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+/* ====================== */
+/* LOGIN REGISTER popup   */
+/* ====================== */
+
+.auth-overlay{
+  position: fixed;
+  inset: 0;
+background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.auth-popup {
+  width: 420px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 10000;
+  animation: scaleIn 0.25s ease;
+}
+
+/* Header */
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.auth-header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 18px;
+}
+
+.auth-header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.auth-popup-close {
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Body */
+.auth-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Buttons */
+.auth-btn {
+  padding: 15px;
+  margin: 0 20px 0 20px;
+  border-radius: 4px;
+  border: 1px solid #b8b7b7;
+  background: #fff;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: background-color 0.2s ease 0.2s,
+              border-color 0.2s ease 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: #f4f4f466;
+  border-color: #cfcfcfa4;
+}
+
+.auth-icon {
+  font-size: 25px;
+  color: #444;
+}
+
+/* Divider */
+.auth-divider {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+  margin: 10px 0 30px 0;
+}
+
+
+/* Input */
+.auth-input-heading{
+  margin: 10px 30px 0 30px;   /* SAME as input */
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 0.2px;
+}
+.auth-input {
+  padding: 6px 0;
+  border: none;
+  border-bottom: 1.5px solid #d93658;
+  margin: 0 30px 0px 30px;
+  outline: none;
+}
+.auth-input:focus {
+  border-bottom-color: #f84464;
+}
+
+.auth-input-submit{
+  background-color: #9f9f9f;
+  border-radius: 4px;
+  margin-top: 60px;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+.auth-input-submit:hover{
+  background-color: #d93658;
+}
+
+/* Animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ====================== */
+/* Modal overlay & box    */
+/* ====================== */
+.city-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.city-modal {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Modal title */
+.city-modal h2 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* City list inside modal */
+.city-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* City button */
+.city-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.city-item:hover {
+  background-color: #f84464;
+  color: white;
+  border-color: #f84464;
+}
+
+
+/* ====================== */
+/* ====================== */
+
+
+
+/* Overlay background */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+/* Show overlay when active */
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;  /* hidden initially */
+  width: 370px;
+  height: 100%;
+  background: #fff;
+  /* padding: 0px 30px; */
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+}
+
+/* Slide in when overlay is active */
+.sidebar-overlay.active .sidebar {
+  right: 0;
+}
+
+/* Close button */
+.close-btn {
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+
+
+
+/* Menu buttons */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column; /* sidebar vertical menu */
+}
+
+/* LOGIN CARD */
+.sidebar-menu-login {
+}
+
+/* FLEX ROW FOR IMAGE + TEXT + BUTTON */
+.sidebar-login {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  gap: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.368);
+}
+
+
+/* IMAGE */
+.sidebar-login img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* TEXT */
+.sidebar-login-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  flex: 1;               /* pushes button to right */
+}
+
+/* BUTTON */
+.sidebar-login-btn {
+  padding: 8px 15px;
+  background-color: transparent;
+  color: #d93658;
+  border: 1px solid #d93658;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
+
+
+
+/* ====================== */
+/* Sidebar menu styles  */
+/* ====================== */
+
+
+
+.sidebar h2 {
+  margin: 20px;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+  margin-top: 20px;
+  width: 100%; /* ensure menu takes full sidebar width */
+}
+
+.sidebar-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* text left, arrow right */
+  width: 100%;                 /* full width */
+  padding: 15px 15px;          /* vertical + horizontal padding */
+  cursor: pointer;
+  max-height: 60px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-menu-button:hover {
+  background-color: #f1f0f0;
+}
+
+.sidebar-icon-left {
+  margin-right: 20px; /* spacing between icon and text */
+}
+.sidebar-icon-right{
+    position: absolute;
+    right: 15px;
+}
+.sidebar-button-container{
+  display: flex;
+  flex-direction: column; 
+  flex-grow: 1;
+}
+.sidebar-button-text {
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+.sidebar-button-subtext{
+  font-size: 12px;
+  color: #9f9f9f;
+  margin-top: 2px;
+}
+
+.sidebar-icon-right {
+  margin-left: 0px;
+}
+
+
+
+/* =========================== */
+    /* Secondary Navbar  */
+/* =========================== */
+
+.navbar-secondary {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  padding: 0 90px;               /* aligns with main navbar */
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* Left & Right nav containers */
+.navbar-secondary-left,
+.navbar-secondary-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* NavLink buttons */
+.navbar-secondary-button {
+  text-decoration: none;         /* remove underline */
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  padding-bottom: 6px;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect */
+.navbar-secondary-button:hover {
+  color: #f84464;
+}
+
+/* ACTIVE STATE (IMPORTANT) */
+.navbar-secondary-button.active {
+  color: black;
+  font-weight: 600;
+}

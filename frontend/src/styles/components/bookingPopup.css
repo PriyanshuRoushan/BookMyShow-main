@@ -1,0 +1,136 @@
+.book-popup{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.book-popup-body{
+  width: 420px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 10000;
+  animation: scaleIn 0.25s ease;
+}
+.book-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.book-popup-header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 18px;
+}
+
+.book-header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.book-popup-close {
+  border: none;
+  background: none;
+  font-size: 18px;
+}
+.book-popup-image{
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seat-image{
+  max-width: 180px;
+  max-width: 180px;
+}
+
+.book-popup-numbers{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+}
+
+.book-popup-number-select {
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  padding: 6px 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  cursor: pointer;
+
+    transition: 
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+.book-popup-number-select:hover {
+  background-color: #f84464;
+  color: #fff;
+}
+.book-popup-number-select.active{
+  background-color: #f84464;
+  color: #fff;
+  transition: scale(1.15);
+
+}
+
+
+.book-popup-select{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.book-popup-selectseat{
+  padding: 10px;
+  width: 100%;
+  background-color: #f84464;
+  color: white;
+  font-size: 14px;
+  width: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* PRICE */
+.book-popup-price-main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.book-popup-price-detailed{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+.popup-price-head-top{
+  color: gray;
+  font-size: 12px;
+}
+.popup-price-head-price{
+  width: 800;
+}
+.popup-price-head-price-bottom{
+  color: rgb(5, 166, 5);
+  font-size: 13px;
+}

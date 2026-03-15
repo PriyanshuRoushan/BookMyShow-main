@@ -1,0 +1,98 @@
+.book-header-main{
+    width: 100%;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.412);
+}
+.book-header-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px 20px 40px;
+}
+.book-header-left {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    align-items: center; /* 🔥 centers arrow relative to both lines */
+}
+
+/* Back arrow */
+.back-icon {
+    font-size: 20px;
+    cursor: pointer;
+    align-self: center; /* ensures perfect vertical centering */
+}
+
+/* Right side text container */
+.book-header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Movie title */
+.book-movie-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.book-header-ticektcount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #f84464;
+    border: 1px solid #f84464;
+    border-radius: 3px;
+    padding: 10px 10px;
+    margin-right: 40px;
+    background: transparent;
+}
+
+/* Theater + place */
+.book-movie-place {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+.book-header-bottom{
+    width: 100%;
+    background-color: #dce1eace;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.book-header-time{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.book-header-time-btn{
+    border-style: solid;
+    border-color: rgb(103, 171, 1);
+    border-width: 1px 1px 1px 5px;
+    border-radius: 5px;
+
+    background-color: white;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #323232
+    
+}
+.book-header-time-btn:hover{
+    background-color: rgb(103, 171, 1);
+    color: white;
+}
+.book-btn-time{
+    font-size: 14px;
+    width: 1000;
+}
+.book-btn-data{
+    font-size: 10px;
+    width: 500;
+}

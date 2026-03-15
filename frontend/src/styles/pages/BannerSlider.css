@@ -1,0 +1,54 @@
+.hero {
+    padding: 20px 0;
+  }
+  
+  /* Peek space */
+  .slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 5%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  /* Moving row */
+  .slider {
+    display: flex;
+    gap: 1%;
+    transition: transform 0.6s ease;
+  }
+  
+  /* Each banner */
+  .slide {
+    flex: 0 0 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  /* Image always fills */
+  .slide img {
+    object-fit: full;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  /* Arrows */
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  .nav.prev { left: 15px; }
+  .nav.next { right: 15px; }
+  

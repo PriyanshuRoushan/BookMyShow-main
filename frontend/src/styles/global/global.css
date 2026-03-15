@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*================ Movies List ================ */
+.global-main{    
+    margin : 20px 110px;
+
+}
+.homepagebanner img{
+    width: 100%;
+    /* margin-top: 40px; */
+    height: auto;
+    padding: 70px 0 70px 0;
+    border-radius: 12px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/*============= EVENT BANNER ============ */
+.event-banner{
+    display: flex;
+    margin: 10px;
+    gap: 30px;
+}
+.event-banner img{
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+
+}
+
+/*============= PREMIER ============ */
+.premier{
+    margin-top: 40px;
+    background-color: rgb(47, 51, 83);
+    padding: 20px 110px;
+}
+.premier-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.premier-header-content{
+    color: rgb(215, 215, 215);
+}
+
+.premier-movie_row{
+    margin-top: 20px;
+}

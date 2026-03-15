@@ -1,0 +1,45 @@
+/* Wrapper for theatre list page */
+.theatre-list-page {
+  padding-top: 140px;   /* space for header + secondary navbar */
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Page heading */
+.theatre-list-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Individual theatre card */
+.theatre-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.theatre-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.theatre-name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.theatre-address {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Empty / helper text */
+.theatre-message {
+  font-size: 14px;
+  color: #777;
+  margin-top: 16px;
+}

@@ -1,0 +1,74 @@
+/* Page wrapper */
+.seat-listing-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  background-color: #f5f5f5;
+}
+
+/* Form card */
+.seat-listing-form {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 24px 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.seat-listing-form h2,
+.seat-listing-form h4,
+.seat-listing-form h5 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Inputs & select */
+.seat-listing-form input,
+.seat-listing-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Row input group */
+.row-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.seat-listing-form button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e50914;
+  color: white;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.seat-listing-form button:hover {
+  opacity: 0.9;
+}
+
+/* Section box */
+.section-box {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Center add buttons */
+.center-btn {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,218 @@
+/* ========================= PAGE ========================= */
+
+.sports-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+/* ========================= BANNER ========================= */
+
+.sports-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ========================= MAIN CONTAINER ========================= */
+
+.sports-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+/* ========================= LEFT OUTER ========================= */
+
+.sports-container-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ========================= LEFT FILTER ========================= */
+
+.sports-page-container-left {
+  flex: 0 0 260px;
+  padding: 20px;
+}
+
+/* Filter wrapper */
+.sports-page-container-left-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Filter title */
+.sports-page-container-left-heading h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Filter card */
+.sports-page-container-left-data {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* ========================= FILTER HEADER ========================= */
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #656565;
+  transition: color 0.2s ease;
+}
+
+/* Active filter */
+.filter-header.open h3 {
+  color: #f84464;
+}
+
+/* Clear button */
+.filter-header-clear {
+  font-size: 13px;
+  color: #656565;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-header-clear:hover {
+  color: #f84464;
+}
+
+/* ========================= DROPDOWN CONTENT ========================= */
+
+.filter-content {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-content label {
+  font-size: 14px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.filter-content input {
+  margin-right: 8px;
+}
+
+/* ========================= LEFT BUTTON ========================= */
+
+.sports-page-container-left-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 0;
+  color: #f84464;
+  border: 1px solid #f84464;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sports-page-container-left-button:hover {
+  background-color: #f84464;
+  color: #ffffff;
+}
+
+/* ========================= RIGHT ========================= */
+
+.sports-page-container-right {
+  flex: 1;
+  min-height: 200px;
+  padding: 20px;
+}
+
+/* Right heading */
+.sports-page-container-right-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sports-page-container-right-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Toggle pills */
+.sports-page-container-right-heading-togel {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sports-page-container-right-heading-togel div {
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #f84464;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.sports-page-container-right-heading-togel div:hover {
+  border-color: #f84464;
+  background-color: #fff5f7;
+}
+
+.sports-page-container-right-heading-togel div.active {
+  background-color: #f84464;
+  color: #ffffff;
+  border-color: #f84464;
+}
+
+/* ========================= RESPONSIVE ========================= */
+
+@media (max-width: 900px) {
+  .sports-page-container {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .sports-container-left {
+    justify-content: flex-start;
+  }
+
+  .sports-page-container-left,
+  .sports-page-container-right {
+    width: 100%;
+    padding: 12px;
+  }
+}

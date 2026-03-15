@@ -1,0 +1,216 @@
+.movies-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================= */
+
+.movies-page-hero {
+  display: flex;
+  justify-content: center;
+  padding: 24px 60px;
+  background-color: #f8f8f8;
+}
+
+/* ========================= */
+
+.movies-page-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  gap: 24px;
+}
+
+/* ========================= LEFT ========================= */
+
+.movies-page-container-left {
+  flex: 0 0 250px;
+  padding: 20px;
+}
+
+/* Filter wrapper */
+.movies-page-container-left-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.movies-page-container-left-heading h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Filter card */
+.movies-page-container-left-data {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Filter header (clickable) */
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #656565;
+}
+.filter-header.open h3 {
+  color: #f84464;
+}
+
+/* CLEAR DATA*/
+.filter-header-clear{
+  font-size: 13px;
+  color: #656565;
+  cursor: pointer;
+  user-select: none;
+}
+.filter-header-clear:hover{
+  color: #f84464;
+}
+
+/* Dropdown content */
+.filter-content {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-content label {
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.filter-content input {
+  margin-right: 8px;
+}
+
+/* Button */
+.movies-page-container-left-button{
+  width: 100%;
+  padding: 10px 0;
+  color: #f84464;
+  border: 1px solid #f84464;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.movies-page-container-left-button:hover{
+  background-color: #f84464;
+  color: #ffffff;
+}
+
+
+
+/* ========================= RIGHT ========================= */
+
+.movies-page-container-right {
+  flex: 1;
+  min-height: 200px;
+}
+
+.movies-page-container-right-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.movies-page-container-right-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Language toggle pills */
+.movies-page-container-right-heading-togel {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.genre-pill{
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #f84464;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.genre-pill:hover {
+  border-color: #f84464;
+  color: #f84464;
+  background-color: #fff5f7;
+}
+
+.genre-pill.active {
+  background-color: #f84464;
+  color: #ffffff;
+  border-color: #f84464;
+}
+
+.movies-page-container-right-comingsoon{
+  display: flex;
+  margin: 30px 0;
+  padding: 20px 40px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+}
+.movies-page-container-right-comingsoon h2{
+  margin:0;
+  font-size:24px;
+  font-weight:600;
+  color:#000000;
+}
+.movies-page-container-right-comingsoon p{
+  font-size:14px;
+  color:#f84464;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.movies-card-movies{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  width: 20%;
+}
+
+/* ========================= RESPONSIVE ========================= */
+
+@media (max-width: 900px) {
+  .movies-page-container {
+    flex-direction: column;
+  }
+
+  .movies-page-container-left {
+    width: 100%;
+    padding: 0;
+  }
+}

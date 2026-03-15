@@ -1,0 +1,149 @@
+Frontend Dependencies
+
+        React
+        React DOM
+        React Router DOM
+        Axios
+        Redux Toolkit
+        React Redux
+        PostCSS
+        Autoprefixer
+        React Icons
+
+Backend Dependencies
+
+        Node.js
+        Express
+        MongoDB
+        Mongoose
+        Dotenv
+        CORS
+        JSON Web Token
+        Bcrypt.js
+        Socket.IO
+
+Dev Dependencies
+
+        Nodemon
+
+State Management
+
+        Redux Toolkit
+
+API Communication
+
+        Axios
+
+Authentication
+
+        JWT
+        Bcrypt
+
+Real-Time Features
+
+        Socket.IO
+
+Database
+
+        MongoDB
+
+API NEEDED TO BE ADDED
+
+        User Authentication API
+        Movie Information API ---- TMDB API
+        City API ---- GeoDB Cities
+        Booking Management API
+        Payment Processing API
+
+--------------------------------------------------------------------------------------------------------------------------Project Structure--------------------------------------------------------------------------------------------------------------------------
+
+        frontend/
+ ├─ public/                   
+ │   ├─ index.html
+ │   └─ favicon.ico
+ ├─ src/
+ │   ├─ assets/                # Images, icons, static files
+ │   │   ├─ images/
+ │   │   └─ icons/
+ │   ├─ components/            # Reusable UI components
+ │   │   ├─ Navbar.jsx
+ │   │   ├─ Footer.jsx
+ │   │   ├─ MovieCard.jsx
+ │   │   ├─ Seat.jsx
+ │   │   └─ BannerSlider.jsx
+ │   ├─ pages/                 # Full pages mapped to routes
+ │   │   ├─ Home.jsx
+ │   │   ├─ MovieDetails.jsx
+ │   │   ├─ Booking.jsx
+ │   │   ├─ Payment.jsx
+ │   │   └─ Profile.jsx
+ │   ├─ redux/                 # Global state management
+ │   │   ├─ store.js
+ │   │   ├─ userSlice.js
+ │   │   └─ bookingSlice.js
+ │   ├─ services/              # API calls
+ │   │   ├─ authService.js
+ │   │   ├─ movieService.js
+ │   │   └─ bookingService.js
+ │   ├─ hooks/                 # Custom React hooks
+ │   │   └─ useAuth.js
+ │   ├─ utils/                 # Helper functions
+ │   │   └─ formatDate.js
+ │   ├─ styles/                # CSS files
+ │   │   ├─ App.css
+ │   │   └─ components.css
+ │   ├─ App.jsx
+ │   └─ index.jsx
+ └─ package.json
+ 
+
+--------------------------------------------------------------------------------------------------------------------------Project Structure--------------------------------------------------------------------------------------------------------------------------
+
+        backend/
+ ├─ config/                      # Configuration files
+ │   ├─ database.js             # MongoDB connection
+ │   └─ jwt.js                  # JWT configuration
+ ├─ controllers/                # Request handlers
+ │   ├─ authController.js       # Authentication logic
+ │   ├─ movieController.js      # Movie operations
+ │   ├─ bookingController.js    # Booking operations
+ │   ├─ userController.js       # User operations
+ │   └─ paymentController.js    # Payment processing
+ ├─ models/                     # Database models
+ │   ├─ User.js                 # User schema
+ │   ├─ Movie.js                # Movie schema
+ │   ├─ Show.js                 # Show schema
+ │   ├─ Booking.js              # Booking schema
+ │   ├─ Theater.js              # Theater schema
+ │   └─ Seat.js                 # Seat schema
+ ├─ routes/                     # API routes
+ │   ├─ authRoutes.js           # Authentication routes
+ │   ├─ movieRoutes.js          # Movie routes
+ │   ├─ bookingRoutes.js        # Booking routes
+ │   ├─ userRoutes.js           # User routes
+ │   └─ paymentRoutes.js        # Payment routes
+ ├─ middleware/                 # Custom middleware
+ │   ├─ auth.js                 # JWT authentication
+ │   ├─ errorHandler.js         # Error handling
+ │   └─ validation.js           # Input validation
+ ├─ utils/                      # Utility functions
+ │   ├─ generateToken.js        # JWT token generation
+ │   ├─ sendEmail.js            # Email utilities
+ │   └─ helpers.js              # Helper functions
+ ├─ .env                        # Environment variables
+ ├─ .gitignore                  # Git ignore file
+ ├─ server.js                   # Main server file
+ └─ package.json                # Dependencies
+
+
+
+User
+-------------------
+City -- #location
+ └── Theatre -- #cinema hall
+      └── Screen -- #individual screens inside a theatre
+           └── Show -- #movies alocated tot the theater
+                └── Seat-- #physical seats layout
+                     └── ShowSeat -- #seat status (available / booked / blocked)
+                             └── Booking -- #final booking record
+
