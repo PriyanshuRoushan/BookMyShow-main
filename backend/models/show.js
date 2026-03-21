@@ -6,41 +6,41 @@ const showSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    movieName: {
-        Type: String,
-        requied: true,
+    movieId: {
+        type: String,
+        required: true,
         trim: true
     },
-    theaterID: {
-        type: mongoose.Schema.Type.ObjectID,
-        ref: "theatre",
-        reuired: true
+    movieName: {
+        type: String,
+        trim: true
     },
-    ScreenID: {
-        type: mongoose.Schema.Type.ObjectID,
-        ref: "screen",
-        requied: true
+    theatreID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Theatre",
+        required: true
     },
-        showDate: {
+    screenID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Screen",
+        required: true
+    },
+    showDate: {
       type: Date,
       required: true,
     },
-
     startTime: {
       type: String, // "18:30"
       required: true,
     },
-
     endTime: {
       type: String, // "21:15"
       required: true,
     },
-
     basePrice: {
       type: Number,
       required: true,
     },
-
     status: {
       type: String,
       enum: ["ACTIVE", "CANCELLED"],

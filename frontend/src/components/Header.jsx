@@ -204,18 +204,47 @@ const Header = () => {
         onClick={() => setShowCityModal(false)}
       >
         <div className="city-modal" onClick={(e) => e.stopPropagation()}>
-          <h2>Select Your City</h2>
+          <div className="city-search-container">
+            <SearchIcon className="city-search-icon" />
+            <input 
+              type="text" 
+              placeholder="Search for your city" 
+              className="city-search-input"
+            />
+            <ClearIcon className="city-close-icon" onClick={() => setShowCityModal(false)} />
+          </div>
 
-          <div className="city-list">
-            {cities.map((city) => (
-              <button
-                key={city._id}
-                onClick={() => selectCity(city)}
-                className="city-item"
-              >
-                {city.name}
-              </button>
-            ))}
+          <div className="city-detect-location">
+            <RadioButtonCheckedRoundedIcon className="detect-icon" />
+            <span>Detect my location</span>
+          </div>
+
+          <div className="popular-cities-section">
+            <h3>Popular Cities</h3>
+            <div className="city-grid">
+              {cities.map((city) => (
+                <button
+                  key={city._id}
+                  onClick={() => selectCity(city)}
+                  className="city-grid-item"
+                >
+                  {city.landmarkImage ? (
+                    <img 
+                      src={`${process.env.REACT_APP_API_URL}${city.landmarkImage}`} 
+                      alt={city.name} 
+                      className="city-landmark"
+                    />
+                  ) : (
+                    <div className="city-landmark-placeholder"></div>
+                  )}
+                  <span>{city.name}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="view-all-cities">
+              View All Cities
+            </div>
           </div>
         </div>
       </div>

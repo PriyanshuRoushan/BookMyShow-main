@@ -6,6 +6,7 @@ import theatreRoutes from './routes/theatreRoutes.js';
 import cityRoutes from './routes/cityRoutes.js';
 import ConnectDB from './config/db.js';
 import screenRoutes from './routes/screenRoutes.js';
+import showRoutes from './routes/showRoutes.js';
 import offerRoutes from "./routes/offerRoutes.js";
 import path from "path";
 
@@ -35,6 +36,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/theatres', theatreRoutes);
 app.use('/api/cities', cityRoutes);
 app.use('/api/screens', screenRoutes);
+app.use('/api/shows', showRoutes);
 app.use("/api/offers", offerRoutes);
 
 // public folder

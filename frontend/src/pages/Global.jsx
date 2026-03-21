@@ -19,10 +19,13 @@ const Global = () => {
       <BannerSlider />
 
       <div className="global-main">
-        <h2>Recommended Movies</h2>
+        <div className="recommended-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 10px', marginTop: '20px' }}>
+          <h2 style={{ fontSize: '24px', color: '#333333', margin: 0 }}>Recommended Movies</h2>
+          <a href="/movies" style={{ color: '#f84464', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}>See All &gt;</a>
+        </div>
 
         {/* Movie List */}
-        <MovieCard />
+        <MovieCard isGlobal={true} />
 
         {/* Homepage Banner */}
         <div className="homepagebanner">

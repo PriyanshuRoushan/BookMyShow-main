@@ -55,17 +55,39 @@
 }
 /* Scroll buttons */
 .scroll_btn {
-  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
   border: none;
   color: white;
-  font-size: 18px;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.row_wrapper:hover .scroll_btn {
+  opacity: 1;
 }
 
 .scroll_btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll_btn.left_btn {
+  left: 0px;
+}
+
+.scroll_btn.right_btn {
+  right: 0px;
 }
 
 
@@ -108,4 +130,123 @@
 .rating_overlay .votes {
   font-size: 14px;
   color: #ccc;
+}
+
+/* =========================================
+      PREMIUM GLOBAL MOVIE CARD DESIGN 
+   ========================================= */
+
+.global_movie_row {
+  display: flex !important;
+  gap: 24px !important;
+  padding: 10px 0px 30px !important;
+  background: transparent !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth !important;
+  grid-template-columns: none !important;
+}
+
+.global_movie_row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.global_movie_card {
+  position: relative;
+  min-width: 220px !important;
+  max-width: 220px !important;
+  border-radius: 8px;
+  overflow: visible;
+  transition: none;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.global_movie_card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+  z-index: 1;
+}
+
+/* Poster */
+.global_movie_card .poster_wrapper {
+  position: relative;
+  width: 100% !important;
+  height: 380px !important;
+  overflow: hidden;
+  border-radius: 8px !important;
+}
+
+.global_movie_card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.3s ease !important;
+  border-radius: 8px !important;
+}
+
+.global_movie_card:hover img {
+  transform: none !important;
+}
+
+/* Info Section */
+.global_movie_info {
+  padding: 12px 0px;
+  text-align: left;
+  background: transparent;
+  backdrop-filter: none;
+  position: relative;
+  z-index: 2;
+}
+
+.global_movie_info h3 {
+  margin: 0 0 4px 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0;
+  text-shadow: none;
+}
+
+.global_movie_info p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  color: #666666 !important;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* Rating Overlay Premium */
+.global_movie_card .rating_overlay {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: #000000 !important;
+  backdrop-filter: none !important;
+  border-top: none !important;
+  justify-content: flex-start !important;
+  padding: 6px 12px !important;
+  height: 34px !important;
+  border-radius: 0 0 8px 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-sizing: border-box;
+}
+
+.global_movie_card .rating_overlay .votes {
+  color: #ffffff !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
 }

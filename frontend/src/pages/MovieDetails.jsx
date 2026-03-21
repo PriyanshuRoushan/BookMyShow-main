@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { getTheatresByCity } from "../services/theatreAPI";
+import { useCity } from "../context/CityContext";
 import { useRef } from "react";
 import { fetchMovieDetails, getMoviePoster } from "../services/movieService.js";
 import { fetchOffersByCategory } from "../services/offersServices.js";
@@ -7,6 +9,8 @@ import "../styles/pages/MovieDetailsPage.css";
 
 const MovieDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { selectedCity } = useCity();
 
   const [movie, setMovie] = useState(null);
   const [offers, setOffers] = useState([]);
@@ -40,6 +44,37 @@ const sliderRef = useRef(null);
   };
 
   if (!movie) return <h2>Loading...</h2>;
+
+  /* ==============================
+      BOOK TICKETS HANDLER
+  ============================== */
+  const handleBookTickets = async () => {
+    if (!selectedCity) {
+      alert("Please select a city first from the top navigation bar.");
+      return;
+    }
+
+    try {
+      const theatres = await getTheatresByCity(selectedCity._id);
+      if (!theatres || theatres.length === 0) {
+        alert(`Movie not available in ${selectedCity.name}`);
+      } else {
+        const cName = selectedCity.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        const mName = movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        
+        const dateObj = new Date();
+        const year = dateObj.getFullYear();
+        const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+        const day = String(dateObj.getDate()).padStart(2, '0');
+        const dateStr = `${year}${month}${day}`;
+
+        navigate(`/movies/${cName}/${mName}/buytickets/${movie.id}/${dateStr}`, { state: { movie } });
+      }
+    } catch (error) {
+      console.error("Error fetching theatres:", error);
+      alert("Error checking theatre availability.");
+    }
+  };
 
   /* ==============================
       IMAGE URLs
@@ -110,7 +145,7 @@ const sliderRef = useRef(null);
             </div>
 
             {/* BOOK BUTTON */}
-            <button className="book-btn">
+            <button className="book-btn" onClick={handleBookTickets}>
               Book Tickets
             </button>
 

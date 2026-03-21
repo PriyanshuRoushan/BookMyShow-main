@@ -15,12 +15,13 @@ export const fetchNowPlayingMovies = async () => {
 
 // POPULAR MOVIES latest
 
-export const fetchPopularMovieslatest = async () => {
+export const fetchPopularMovieslatest = async (limit = null) => {
   const res = await fetch(
     `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_original_language=hi&primary_release_date.lte=2026-02-31&primary_release_date.gte=2024-01-01&sort_by=popularity.desc`
   );
   const data = await res.json();
-  return (data.results || []).slice(0, 10);
+  const results = data.results || [];
+  return limit ? results.slice(0, limit) : results;
 };
 
 // DISOCOVER MOVIES

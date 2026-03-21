@@ -3,6 +3,7 @@ import BannerSlider from '../../components/BannerSlider';
 import '../../styles/pages/pagesMovies.css';
 
 import { CityContext } from '../../context/CityContext';
+import { fetchPopularMovieslatest } from '../../services/movieService';
 import PlaceholderPoster from '../../assets/images/Book_My_Show_Logo.png';
 import MovieCard from '../../components/MovieCard';
 
@@ -14,7 +15,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
 const Movies = () => {
-  const { city } = useContext(CityContext);
+  const { selectedCity } = useContext(CityContext);
 
   // ================= GENRES STATE =================
   const [selectedGenres, setSelectedGenres] = useState([]);
@@ -36,6 +37,18 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchPopularMovieslatest(20)
+      .then(data => {
+        setMovies(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
 
 
   // ================= FILTER FUNCTIONS =================
@@ -85,7 +98,7 @@ const filteredMovies =
   selectedGenres.length === 0
     ? movies
     : movies.filter((movie) =>
-        selectedGenres.every((id) =>
+        selectedGenres.some((id) =>
           movie.genre_ids?.includes(id)
         )
       );
@@ -223,7 +236,7 @@ const filteredMovies =
           {/* ================= RIGHT MOVIES ================= */}
           <div className="movies-page-container-right">
             <div className="movies-page-container-right-heading">
-              <h2>Movies in {city}</h2>
+              <h2>Movies in {selectedCity?.name}</h2>
             </div>
               <div className="movies-page-container-right-heading-togel">
                 {genres.map((genre) => (
@@ -245,7 +258,13 @@ const filteredMovies =
             </div>
 
             {/* ================= MOVIE CARDS ================= */}
-                <MovieCard className="movies-card-movies" />
+                {loading ? (
+                  <p>Loading movies...</p>
+                ) : filteredMovies.length === 0 ? (
+                  <p>No movies match the selected genres.</p>
+                ) : (
+                  <MovieCard isGlobal={true} isGrid={true} className="movies-card-movies" movies={filteredMovies} />
+                )}
 
           </div>
         </div>

@@ -49,7 +49,7 @@ function App() {
             
             
             {/* ========== TESTING (not completed) ======== */}
-                <Route path="/theatres"element={ <TheatreList />}/>
+                <Route path="/movies/:cityName/:movieName/buytickets/:movieId/:date" element={ <TheatreList />}/>
                 <Route path="/theatres/:theatreId/screens"element={ < ScreenList/>}/>
 
             </Route> 
