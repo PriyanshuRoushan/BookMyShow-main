@@ -7,19 +7,15 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/PriyanshuRoushan/BookMyShow-main?style=for-the-badge" />
-  <img src="https://img.shields.io/github/forks/PriyanshuRoushan/BookMyShow-main?style=for-the-badge" />
-  <img src="https://img.shields.io/github/issues/PriyanshuRoushan/BookMyShow-main?style=for-the-badge" />
-  <img src="https://img.shields.io/github/license/PriyanshuRoushan/BookMyShow-main?style=for-the-badge" />
+<img src="https://img.shields.io/github/stars/PriyanshuRoushan/BookMyShow-main?style=for-the-badge&cacheSeconds=0" />
+<img src="https://img.shields.io/github/forks/PriyanshuRoushan/BookMyShow-main?style=for-the-badge&cacheSeconds=0" />
+<img src="https://img.shields.io/github/issues/PriyanshuRoushan/BookMyShow-main?style=for-the-badge&cacheSeconds=0" />
+<img src="https://img.shields.io/github/license/PriyanshuRoushan/BookMyShow-main?style=for-the-badge&cacheSeconds=0" />
 </p>
 
 ---
 
 <!-- ================= PREVIEW ================= -->
-
-<p align="center">
-  <img src="./screenshots/preview.png" width="100%" />
-</p>
 
 <p align="center">
   🚀 A high-performance <b>MERN Stack</b> Movie Ticket Booking Application  
