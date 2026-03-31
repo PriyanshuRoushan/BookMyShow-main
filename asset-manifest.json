@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/BookMyShow-main/static/css/main.db892e1a.css",
+    "main.js": "/BookMyShow-main/static/js/main.1e50b063.js",
+    "static/js/453.20359781.chunk.js": "/BookMyShow-main/static/js/453.20359781.chunk.js",
+    "static/media/Musicevent.png": "/BookMyShow-main/static/media/Musicevent.2114e26ffa286ba9f9ac.png",
+    "static/media/Workshopevent.png": "/BookMyShow-main/static/media/Workshopevent.d37a61a43543198f5524.png",
+    "static/media/Comedyevent.png": "/BookMyShow-main/static/media/Comedyevent.c9e81716ce16bb83b059.png",
+    "static/media/Cricketevent.png": "/BookMyShow-main/static/media/Cricketevent.abbdd97bc3431df8de25.png",
+    "static/media/eventbanner.webp": "/BookMyShow-main/static/media/eventbanner.d6b82c8ec44c53c725d1.webp",
+    "static/media/banner3.avif": "/BookMyShow-main/static/media/banner3.f83bad66062c1096ce4a.avif",
+    "static/media/bannert1.avif": "/BookMyShow-main/static/media/bannert1.7dfc04ec878539df60f5.avif",
+    "static/media/sportsbanner.avif": "/BookMyShow-main/static/media/sportsbanner.c56c5c85448540db1230.avif",
+    "static/media/small-car.png": "/BookMyShow-main/static/media/small-car.6b0fb58329f136e5d42a.png",
+    "static/media/auto.png": "/BookMyShow-main/static/media/auto.f72b506e68fd023672b1.png",
+    "static/media/Book_My_Show_Logo.png": "/BookMyShow-main/static/media/Book_My_Show_Logo.a389af88c4b0380b450f.png",
+    "static/media/big-car.png": "/BookMyShow-main/static/media/big-car.73d8137bb1a0e082afbf.png",
+    "static/media/bike.png": "/BookMyShow-main/static/media/bike.3ac30188176742d74ebb.png",
+    "static/media/cycle.png": "/BookMyShow-main/static/media/cycle.bb9da3e48b2e26916290.png",
+    "static/media/van.png": "/BookMyShow-main/static/media/van.1b2356222292c1e9de6a.png",
+    "static/media/mid-car.png": "/BookMyShow-main/static/media/mid-car.b216dc06080a89ea0cf3.png",
+    "static/media/bus.png": "/BookMyShow-main/static/media/bus.9eb43315ed44fe96daa0.png",
+    "static/media/banner2.avif": "/BookMyShow-main/static/media/banner2.2de1fbe907ad61b21445.avif",
+    "static/media/homepagebanner2.avif": "/BookMyShow-main/static/media/homepagebanner2.f5092d230582d872c8c5.avif",
+    "index.html": "/BookMyShow-main/index.html",
+    "main.db892e1a.css.map": "/BookMyShow-main/static/css/main.db892e1a.css.map",
+    "main.1e50b063.js.map": "/BookMyShow-main/static/js/main.1e50b063.js.map",
+    "453.20359781.chunk.js.map": "/BookMyShow-main/static/js/453.20359781.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db892e1a.css",
+    "static/js/main.1e50b063.js"
+  ]
+}
