@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BookMyShow-main/static/css/main.db892e1a.css",
-    "main.js": "/BookMyShow-main/static/js/main.1e50b063.js",
+    "main.js": "/BookMyShow-main/static/js/main.fdf215ed.js",
     "static/js/453.20359781.chunk.js": "/BookMyShow-main/static/js/453.20359781.chunk.js",
     "static/media/Musicevent.png": "/BookMyShow-main/static/media/Musicevent.2114e26ffa286ba9f9ac.png",
     "static/media/Workshopevent.png": "/BookMyShow-main/static/media/Workshopevent.d37a61a43543198f5524.png",
@@ -24,11 +24,11 @@
     "static/media/homepagebanner2.avif": "/BookMyShow-main/static/media/homepagebanner2.f5092d230582d872c8c5.avif",
     "index.html": "/BookMyShow-main/index.html",
     "main.db892e1a.css.map": "/BookMyShow-main/static/css/main.db892e1a.css.map",
-    "main.1e50b063.js.map": "/BookMyShow-main/static/js/main.1e50b063.js.map",
+    "main.fdf215ed.js.map": "/BookMyShow-main/static/js/main.fdf215ed.js.map",
     "453.20359781.chunk.js.map": "/BookMyShow-main/static/js/453.20359781.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.db892e1a.css",
-    "static/js/main.1e50b063.js"
+    "static/js/main.fdf215ed.js"
   ]
 }
