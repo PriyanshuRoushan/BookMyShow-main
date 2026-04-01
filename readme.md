@@ -73,7 +73,7 @@ Built using **MERN Stack** with scalable architecture.
 
 ## 🎬 Home Page
 <p align="center">
-  <img src="https://raw.githubusercontent.com/PriyanshuRoushan/BookMyShow-main/main/frontend/public/main.png" width="80%" />
+  <img src="frontend/public/main.png" width="80%" />
 </p>
 
 ## 🎟️ Booking Section
