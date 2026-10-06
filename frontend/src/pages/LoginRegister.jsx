@@ -12,6 +12,7 @@ const LoginRegister = () => {
   const [error, setError] = useState("");
 
   const [formData, setFormData] = useState({
+    name: "",
     identifier: "",
     password: "",
   });
@@ -32,8 +33,10 @@ const handleSubmit = async (e) => {
 
   try {
     // 🔥 Explicit payload (do NOT pass formData directly)
-    const payload = {
-      identifier: formData.identifier,
+    const payload = isLogin ? { identifier: formData.identifier, password: formData.password } : {
+      name: formData.name,
+      email: formData.identifier,
+      phone: formData.phone,
       password: formData.password,
     };
 
@@ -69,6 +72,10 @@ const handleSubmit = async (e) => {
       {error && <p className="error-text">{error}</p>}
 
       <form onSubmit={handleSubmit}>
+        {!isLogin && <>
+          <label>Name</label>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name" required />
+        </>}
         <label>Email or Phone Number</label>
         <input
           type="text"
@@ -78,6 +85,11 @@ const handleSubmit = async (e) => {
           placeholder="Enter email or phone"
           required
         />
+
+        {!isLogin && <>
+          <label>Phone Number</label>
+          <input type="tel" name="phone" value={formData.phone || ""} onChange={handleChange} placeholder="Enter phone number" required />
+        </>}
 
         <label>Password</label>
         <input

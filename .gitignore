@@ -2,6 +2,7 @@
 # DEPENDENCIES
 # ========================
 node_modules/
+/Users/priyanshuroushan/Desktop/project/BookMyShow-main/backend/node_modules
 
 # ========================
 # ENV FILES (VERY IMPORTANT 🔐)

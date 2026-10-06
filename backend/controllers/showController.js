@@ -7,9 +7,15 @@ export const getShows = async (req, res) => {
     const { cityId, movieId, date } = req.query;
     
     // We should populate the theatre and screen
-    let query = {};
-    // if (movieId) query.movieId = movieId; // 🔥 Bypass movie checking completely
-    // if (date) query.showDate = new Date(date); // 🔥 Bypass strict millisecond matching for Universal routing
+    const query = { status: "ACTIVE" };
+    if (movieId) query.movieId = String(movieId);
+    if (date) {
+      const start = new Date(`${date}T00:00:00.000Z`);
+      if (Number.isNaN(start.getTime())) return res.status(400).json({ message: "Invalid date" });
+      const end = new Date(start);
+      end.setUTCDate(end.getUTCDate() + 1);
+      query.showDate = { $gte: start, $lt: end };
+    }
 
     // Filter where either cityId matches on populated Theatre, or fetch conventionally
     const shows = await Show.find(query)

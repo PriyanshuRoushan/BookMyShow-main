@@ -152,7 +152,19 @@ const TheatreList = () => {
                           <div className="theatre-card-right">
                               <div className="showtimes-grid">
                                   {item.shows.map(show => (
-                                      <div key={show._id} className="showtime-box-wrapper" onClick={() => navigate(`/screens/${show.screenID._id}`)}>
+                                    <div
+                                    key={show._id}
+                                    className="showtime-box-wrapper"
+                                    onClick={() =>
+                                        navigate(`/screens/${show.screenID._id}`, {
+                                        state: {
+                                            movie,
+                                            theatre: item.theatre,
+                                            show,
+                                        },
+                                        })
+                                    }
+                                    >
                                           <div className="showtime-box">
                                               <div className="show-time-text">{show.startTime}</div>
                                               <div className="show-format">4DX</div>

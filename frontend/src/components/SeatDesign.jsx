@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/components/seatDesign.css";
 
 const SeatDesign = ({
   seatLayout,
   aisleIndexes = [],
-  maxSelectable
+  maxSelectable,
+  selectedSeats,
+  setSelectedSeats,
+  unavailableSeats = []
 }) => {
-  const [selectedSeats, setSelectedSeats] = useState([]);
-
-  // 🔁 Reset selected seats when ticket count changes
-  useEffect(() => {
-    setSelectedSeats([]);
-  }, [maxSelectable]);
-
   const toggleSeat = (rowLabel, seatNo) => {
     // ❌ Block selection if ticket count is invalid
     if (typeof maxSelectable !== "number" || maxSelectable <= 0) {
@@ -70,16 +66,18 @@ const SeatDesign = ({
 
                   const seatId = `${row.rowLabel}${seat}`;
                   const isSelected = selectedSeats.includes(seatId);
+                  const isUnavailable = unavailableSeats.includes(seatId);
                   const isDisabled =
-                    !isSelected &&
+                    isUnavailable || (!isSelected &&
                     typeof maxSelectable === "number" &&
-                    selectedSeats.length >= maxSelectable;
+                    selectedSeats.length >= maxSelectable);
 
                   return (
                     <React.Fragment key={`${row.rowLabel}-${index}`}>
                       <div
                         className={`seat-box
                           ${isSelected ? "selected" : ""}
+                          ${isUnavailable ? "disabled" : ""}
                           ${isDisabled ? "disabled" : ""}
                         `}
                         onClick={() =>

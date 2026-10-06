@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String?  @unique
+  phone     String?  @unique
+  password  String
+  createdAt DateTime @default(now())
+
+  bookings  Booking[]
+}
+
+model Theatre {
+  id       String   @id @default(uuid())
+  name     String
+  location String
+  city     String?
+  screens  Screen[]
+}
+
+model Screen {
+  id         String   @id @default(uuid())
+  theatreId  String
+  totalSeats Int
+
+  theatre    Theatre  @relation(fields: [theatreId], references: [id])
+  seats      Seat[]
+  shows      Show[]
+}
+
+model Seat {
+  id       String @id @default(uuid())
+  screenId String
+  row      String
+  column   Int
+  seatType String @default("NORMAL") // e.g., VIP, NORMAL
+  price    Float
+
+  screen   Screen @relation(fields: [screenId], references: [id])
+}
+
+model Show {
+  id        String   @id @default(uuid())
+  movieId   String   // Stores MongoDB ObjectId as string
+  screenId  String
+  startTime DateTime
+  status    String   @default("ACTIVE") // ACTIVE, CANCELLED
+
+  screen    Screen   @relation(fields: [screenId], references: [id])
+  bookings  Booking[]
+}
+
+model Booking {
+  id            String   @id @default(uuid())
+  userId        String
+  showId        String
+  seatsBooked   String[] // Storing seat IDs as string array for simplicity or we can do a mapping table. Let's do string array.
+  totalAmount   Float
+  bookingStatus String   @default("CONFIRMED") // CONFIRMED, CANCELLED
+  paymentStatus String   @default("PENDING") // PENDING, PAID, FAILED
+  createdAt     DateTime @default(now())
+
+  user          User     @relation(fields: [userId], references: [id])
+  show          Show     @relation(fields: [showId], references: [id])
+  payment       Payment?
+}
+
+model Payment {
+  id            String   @id @default(uuid())
+  bookingId     String   @unique
+  transactionId String?
+  status        String   @default("PENDING")
+
+  booking       Booking  @relation(fields: [bookingId], references: [id])
+}

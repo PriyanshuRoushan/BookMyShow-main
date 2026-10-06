@@ -21,7 +21,7 @@ const seatSchema = new mongoose.Schema ({
     },
     type: {
         type: String,
-        enum: ["Recliner", "Basic", "premium"],
+        enum: ["RECLINER", "BASIC", "PREMIUM"],
         required: true
     },
     basePrice: {
@@ -34,8 +34,8 @@ const seatSchema = new mongoose.Schema ({
 );
 
 seatSchema.index(
-    { screenID: 1, seatnumber: 1},
-    { uniqueID: true}
+    { screenID: 1, seatNumber: 1},
+    { unique: true}
 )
 
 export default mongoose.model("seats", seatSchema)

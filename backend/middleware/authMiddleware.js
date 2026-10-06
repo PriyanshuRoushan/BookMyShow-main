@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import User from "../models/user.js";
+import User from "../models/users.js";
 
 export const protect = async (req, res, next) => {
   let token;
@@ -16,7 +16,7 @@ export const protect = async (req, res, next) => {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
       // 3️⃣ Get user from DB (exclude password)
-      const user = await User.findById(decoded.id).select("-password");
+      const user = await User.findById(decoded.id);
 
       if (!user) {
         return res.status(401).json({

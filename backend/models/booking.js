@@ -5,21 +5,22 @@ const bookingSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
+        default: () => `BMS-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`,
     },
     userID: {
         type: mongoose.Schema.Types.ObjectID,
-        ref: "users",
+        ref: "User",
         required: true
     },
     showID: {
         type: mongoose.Schema.Types.ObjectID,
-        ref: "shows",
-        require: true
+        ref: "Show",
+        required: true
     },
     seats: [
         {
             type: mongoose.Schema.Types.ObjectID,
-            ref: "seats",
+            ref: "ShowSeat",
             required: true
         }
     ],
@@ -29,19 +30,23 @@ const bookingSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["Pending", "Success", "Failed"],
-        required: true
+        enum: ["PENDING", "CONFIRMED", "CANCELLED", "EXPIRED"],
+        default: "PENDING"
     },
     paymentStatus: {
         type: String,
-        enum: ["Pending", "Success", "Failed"],
-        required: true
+        enum: ["PENDING", "PAID", "FAILED", "REFUNDED"],
+        default: "PENDING"
     },
     expiresAt: {
         type: Date
     },
+    paymentReference: { type: String, default: null },
+    emailSentAt: { type: Date, default: null },
 },
     {timestamps: true}
 );
+
+bookingSchema.index({ userID: 1, createdAt: -1 });
 
 export default mongoose.model("Booking", bookingSchema);

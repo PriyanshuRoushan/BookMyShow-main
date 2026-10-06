@@ -8,6 +8,7 @@ import ConnectDB from './config/db.js';
 import screenRoutes from './routes/screenRoutes.js';
 import showRoutes from './routes/showRoutes.js';
 import offerRoutes from "./routes/offerRoutes.js";
+import bookingRoutes from "./routes/bookinRoutes.js";
 import path from "path";
 
 
@@ -15,12 +16,7 @@ import path from "path";
 dotenv.config();
 
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:3000", // frontend URL
-    credentials: true,
-  })
-);
+app.use(cors({ origin: process.env.CLIENT_URL?.split(",") || "http://localhost:3000", credentials: true }));
 
 const __dirname = path.resolve();
 
@@ -38,6 +34,7 @@ app.use('/api/cities', cityRoutes);
 app.use('/api/screens', screenRoutes);
 app.use('/api/shows', showRoutes);
 app.use("/api/offers", offerRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 // public folder
 app.use("/uploads", express.static("uploads"));
